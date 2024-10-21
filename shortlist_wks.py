@@ -83,3 +83,14 @@ for i in range(len(details_of_suggested_players)):
             details_of_suggested_players[i].append(row['StrikeRate'])
 
 print(details_of_suggested_players)
+
+df_suggested_players = pd.DataFrame(details_of_suggested_players, columns=[
+    'Player', 'Matches', 'Innings', 'Dismissals', 'Catches', 'Stumpings', 
+    'Dismissals_per_Innings', 'Catches_per_Inning', 'Stumpings_per_Inning', 
+    'Price', 'Matches_Batsman', 'Innings_Batsman', 'Balls', 
+    'TotalRuns', 'BattingAverage', 'StrikeRate'
+])
+
+df_suggested_players.to_csv('suggested_players.csv', index=False)
+
+print("CSV file 'suggested_players.csv' created successfully.")
